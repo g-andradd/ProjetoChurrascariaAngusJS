@@ -1,0 +1,76 @@
+<script lang="pt-br">
+    var carne = 15;
+    var frango = 15;
+    var linguica = 15;
+    var coracao = 15;
+    var valorCarne = 0;
+    var valorFrango = 0;
+    var valorLinguica = 0;
+    var valorCoracao = 0;
+    var qntCarne = 0;
+    var qntFrango = 0;
+    var qntLinguica = 0;
+    var qntCoracao = 0;
+    var continuacao = "sim";
+    alert("Bem vindo à Churrascaria Angus!!");
+    while (continuacao == "sim") {
+        var opcoes = prompt("Menu: \n 1) Carne : R$10,00 / Quantidade:" + carne + "\n 2) Frango: R$6,00 / Quantidade:" + frango + "\n 3) Linguiça: R$3,00 / Quantidade:" + linguica + "\n 4) Coração: R$8,00 / Quantidade:" + coracao + "\n O que deseja comprar?");
+
+        switch (opcoes) {
+            case '1':
+                qntCarne = parseInt(prompt("Digite a quantidade de Carne:"));
+                if ((qntCarne <= carne) && (qntCarne > 0)) {
+                    carne = carne - qntCarne;
+                    valorCarne = qntCarne * 10;
+                    alert("Compra de carnes feita com sucesso!");
+
+                }
+                else {
+                    alert("Compra inválida!");
+
+                }
+                break;
+            case '2':
+                qntFrango = parseInt(prompt("Digite a quantidade de Frango:"));
+                if ((qntFrango <= frango) && (qntFrango > 0)) {
+                    frango = frango - qntFrango;
+                    valorFrango = qntFrango * 6;
+                    alert("Compra de frangos feita com sucesso!");
+
+                }
+                else {
+                    alert("Compra inválida!");
+                }
+                break;
+            case '3':
+                qntLinguica = parseInt(prompt("Digite a quantidade de Linguiça:"));
+                if ((qntLinguica <= linguica) && (qntLinguica > 0)) {
+                    linguica = linguica - qntLinguica;
+                    valorLinguica = qntLinguica * 3;
+                    alert("Compra de linguiças feita com sucesso!");
+
+                }
+                else {
+                    alert("Compra inválida!");
+                }
+                break;
+            case '4':
+                qntCoracao = parseInt(prompt("Digite a quantidade de Coração:"));
+                if ((qntCoracao <= coracao) && (qntCoracao > 0)) {
+                    coracao = coracao - qntCoracao;
+                    valorCoracao = qntCoracao * 8;
+                    alert("Compra de corações feita com sucesso!");
+                }
+                else {
+                    alert("Compra inválida!");
+                }
+                break;
+        }
+        continuacao = prompt("Deseja continuar a compra?\n Digite 'sim' ou 'não'");
+
+    }
+
+    var valorTotal = valorCoracao + valorCarne + valorFrango + valorLinguica;
+    alert("Você comprou:\n" + qntCarne + " Carnes.\n" + qntFrango + " Frangos.\n" + qntLinguica + " Linguiças.\n" + qntCoracao + " Corações. \nO valor da sua conta é de: R$" + valorTotal);
+
+</script>
